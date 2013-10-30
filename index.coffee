@@ -2,11 +2,12 @@ https = require('https')
 XmlDocument = require('xmldoc').XmlDocument
 
 Artwork = (data) ->
+  _id: data.childNamed('dc:identifier').val
   url: data.childNamed('dc:format').val
   language: data.childNamed('dc:language')?.val
   date: data.childNamed('dc:date')?.val
   description: data.childNamed('dc:description')?.val
-  creator: data.childNamed('dc:creator')?.val
+  creator: data.childNamed('dc:creator')?.val.split(': ')[1]
   type: data.childNamed('dc:type')?.val
   title: data.childNamed('dc:title')?.val
 

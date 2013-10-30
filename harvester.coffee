@@ -7,8 +7,8 @@ RijksHarvester =->
       api.listRecords resumptionToken, (data) ->
         for record in data.records
           json = JSON.stringify(record)
-          fs.appendFile 'file.txt', json
-          fs.appendFile 'file.txt', ","
+          fs.appendFile 'collection.json', json
+          fs.appendFile 'collection.json', "\n"
         _harvester(data.resumptionToken, callback)
     else
       console.log("archive has been harvested")
