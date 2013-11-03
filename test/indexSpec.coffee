@@ -14,7 +14,7 @@ describe 'RijksAPI', ->
 
     it 'has records with the right properties', (done) ->
       api.listRecords "new", (data) ->
-        keys = ['url', 'language', 'date', 'description', 'creator', 'type', 'title']
+        keys = ['_id', 'url', 'language', 'date', 'description', 'creator', 'type', 'title']
         expect(data.records[9]).to.have.keys(keys)
         done()
 
@@ -32,7 +32,7 @@ describe 'RijksAPI', ->
 
     it 'has records with the right properties', (done) ->
       api.listRecords resumptionToken, (data) ->
-        keys = ['url', 'language', 'date', 'description', 'creator', 'type', 'title']
+        keys = ['_id', 'url', 'language', 'date', 'description', 'creator', 'type', 'title']
         expect(data.records[9]).to.have.keys(keys)
         done()
 
